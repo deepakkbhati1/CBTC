@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WeatherVue</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            opacity: 0;
+            transition: opacity 2s ease-in-out; /* Change duration and easing as needed */
+        }
+
+        .container.visible {
+            opacity: 1;
+        }
+
+        /* Additional styles for a better visual experience */
+        h1, h2, p {
+            margin: 0;
+            padding: 10px;
+        }
+
+        #locationInput {
+            padding: 5px;
+        }
+
+        #searchButton {
+            padding: 5px;
+            margin-left: 10px;
+        }
+        #ft a {
+            display: inline-block; /* Allows padding and border to be visible */
+            padding: 10px; /* Adds padding around the text */
+            border: 2px solid #000; /* Adjust border width and color as needed */
+            text-decoration: none; /* Removes underline from link */
+            color: #000; /* Link text color */
+            font-weight: bold; /* Optional: makes the text bold */
+        }
+
+        #ft a:hover {
+            background-color: #f0f0f0; /* Optional: changes background on hover */
+            border-color: #333; /* Optional: changes border color on hover */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 id="wv">WeatherVue</h1>
+        <link rel="icon" type="image/x-icon" href="https://tse3.mm.bing.net/th?id=OIP.MWzoIfr9NnVzeGNonDsRVwHaHa&pid=Api&P=0&h=180">
+        <input type="text" id="locationInput" placeholder="Enter a city">
+        <button id="searchButton">Search</button> 
+        <div class="weather-info">
+            <h2 id="location"></h2>
+            <p id="temperature"></p>
+            <p id="description"></p>
+            <h1 id="ft"><a id="l" href="">Click here to Refresh</a></h1>
+        </div>
+    </div>
+    <script src="script.js"></script>
+    <script >
+        document.addEventListener("DOMContentLoaded", () => {
+            const container = document.querySelector('.container');
+            container.classList.add('visible');
+        });
+    </script>
+</body>
+
+</html>
